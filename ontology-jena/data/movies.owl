@@ -1,0 +1,925 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/anass/ontologies/movies/"
+     xml:base="http://www.semanticweb.org/anass/ontologies/movies/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:movies="http://www.semanticweb.org/anass/ontologies/movies#"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/anass/ontologies/2024/3/untitled-ontology-4#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/anass/ontologies/movies"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#hasActor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#hasWriter"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#hasActor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#hasDirector">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#hasDirector"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#hasDirector"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#hasGenre">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#hasWriter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#hasWriter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#hasWriter"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#hasWriter"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#isActorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#isActorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#isActorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#isActorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#isDirectorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#isDirectorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#isDirectorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#director"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#isDirectorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#isWriterOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#isWriterOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#isWriterOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#isWriterOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#age">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedShort"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#country">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#gender">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#genre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#genre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#language -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#language">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#nationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#nationality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#title">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anass/ontologies/movies#year">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anass/ontologies/movies#actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anass/ontologies/movies#director">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#genre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anass/ontologies/movies#genre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#writer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anass/ontologies/movies#writer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Aaron_Eckhart -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Aaron_Eckhart">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#the_dark_knight"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">56</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Aaron Eckhart</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Aboelhassan_Abbas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Aboelhassan_Abbas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Ibrahim_labyad"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">60</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Aboelhassan Abbas</movies:name>
+        <movies:nationality>Egyptian</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Action -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Action">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#genre"/>
+        <movies:genre>Action</movies:genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Ahmed_el_sakka -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Ahmed_el_sakka">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Ibrahim_labyad"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">51</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Ahmed El Sakka</movies:name>
+        <movies:nationality>Egyptian</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Amr_Waked -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Amr_Waked">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Ibrahim_labyad"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">52</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Amr Waked</movies:name>
+        <movies:nationality>Egyptian</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Ansel_Elgort -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Ansel_Elgort">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Baby_driver"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">30</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Ansel Elgort</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Baby_driver -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Baby_driver">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Ansel_Elgort"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Edgar_Wright"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Jon_Bernthal"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Jon_Hamm"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Edgar_Wright"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Action"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Crime"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Drama"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Edgar_Wright"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>Baby Driver</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2017</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Boogie_Nights -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Boogie_Nights">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Burt_Reynolds"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Julianne_Moore"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Mark_Wahlberg"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Paul_Thomas_Anderson"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Drama"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Paul_Thomas_Anderson"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>Boogie Nights</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1997</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Burt_Reynolds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Burt_Reynolds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Boogie_Nights"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">0</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Burt Reynolds</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Christian_Bale -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Christian_Bale">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#the_dark_knight"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">50</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Christian Bale</movies:name>
+        <movies:nationality>British</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Christine_Leunens -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Christine_Leunens">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Jojo_rabbit"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">60</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</movies:gender>
+        <movies:name>Christine Leunens</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Christopher_nolan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Christopher_nolan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#the_dark_knight"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#the_dark_knight"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">54</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Christopher Nolan</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Comedy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Comedy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#genre"/>
+        <movies:genre>Comedy</movies:genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Crime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Crime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#genre"/>
+        <movies:genre>Crime</movies:genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Drama -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Drama">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#genre"/>
+        <movies:genre>Drama</movies:genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Edgar_Wright -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Edgar_Wright">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Baby_driver"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#shaun_of_the_dead"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Baby_driver"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#shaun_of_the_dead"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Baby_driver"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#shaun_of_the_dead"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">48</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Edgar Wright</movies:name>
+        <movies:nationality>British</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Heath_Ledger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Heath_Ledger">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#the_dark_knight"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">45</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Heath Ledger</movies:name>
+        <movies:nationality>Australian</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Hind_Sabri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Hind_Sabri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Ibrahim_labyad"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">45</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</movies:gender>
+        <movies:name>Hind Sabri</movies:name>
+        <movies:nationality>Egyptian</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Horror -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Horror">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#genre"/>
+        <movies:genre>Horror</movies:genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Ibrahim_labyad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Ibrahim_labyad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Ahmed_el_sakka"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Amr_Waked"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Hind_Sabri"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Marwan_Hamed"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Action"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Drama"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Aboelhassan_Abbas"/>
+        <movies:country>Egypt</movies:country>
+        <movies:language>Arabic</movies:language>
+        <movies:title>Ibrahim Labyad</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2009</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#John_Travolta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#John_Travolta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Pulp_Fiction"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">59</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>John Travolta</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Jojo_rabbit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Jojo_rabbit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Roman_Griffin"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Thomasin_Mckenzie"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Taika_Waititi"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Comedy"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Drama"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Christine_Leunens"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Taika_Waititi"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>Jojo Rabbit</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2019</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Jon_Bernthal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Jon_Bernthal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Baby_driver"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">48</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Jon Bernthal</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Jon_Hamm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Jon_Hamm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Baby_driver"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">53</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Jon Hamm</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Jonathan_Nolan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Jonathan_Nolan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#the_dark_knight"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">48</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Jonathan Nolan</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Julianne_Moore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Julianne_Moore">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Boogie_Nights"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">64</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</movies:gender>
+        <movies:name>Julianne Moore</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Kill_Bill -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Kill_Bill">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Quentin_Tarantino"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Quentin_Tarantino"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Action"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Crime"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Thriller"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Quentin_Tarantino"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Uma_thurman"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>Kill Bill (vol1)</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2003</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Mark_Wahlberg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Mark_Wahlberg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Boogie_Nights"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">53</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Mark Wahlberg</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Marwan_Hamed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Marwan_Hamed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#director"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Ibrahim_labyad"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">47</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Marwan Hamed</movies:name>
+        <movies:nationality>Egyptian</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Paul_Thomas_Anderson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Paul_Thomas_Anderson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Boogie_Nights"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#There_will_be_blood"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Boogie_Nights"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#There_will_be_blood"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Boogie_Nights"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#There_will_be_blood"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">53</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Paul Thomas Anderson</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Pulp_Fiction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Pulp_Fiction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#John_Travolta"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Uma_thurman"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Quentin_Tarantino"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Crime"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Thriller"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Quentin_Tarantino"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>Pulp Fiction</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1994</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Quentin_Tarantino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Quentin_Tarantino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Kill_Bill"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Pulp_Fiction"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Kill_Bill"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Pulp_Fiction"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">53</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Quentin Tarantino</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Roman_Griffin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Roman_Griffin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Jojo_rabbit"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">17</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Roman Griffin Davis</movies:name>
+        <movies:nationality>British</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Taika_Waititi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Taika_Waititi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isDirectorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Jojo_rabbit"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Jojo_rabbit"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">47</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</movies:gender>
+        <movies:name>Taika Waititi</movies:name>
+        <movies:nationality>New Zealand</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#There_will_be_blood -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#There_will_be_blood">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Paul_Thomas_Anderson"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Drama"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Paul_Thomas_Anderson"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>There will be blood</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2007</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Thomasin_Mckenzie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Thomasin_Mckenzie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Jojo_rabbit"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">24</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</movies:gender>
+        <movies:name>Thomasin McKenzie</movies:name>
+        <movies:nationality>New Zealand</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Thor_ragnarok -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Thor_ragnarok">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Taika_Waititi"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Action"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Comedy"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>Thor: Ragnarok</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2017</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Thriller -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Thriller">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#genre"/>
+        <movies:genre>Thriller</movies:genre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#Uma_thurman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#Uma_thurman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#writer"/>
+        <movies:isActorOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Pulp_Fiction"/>
+        <movies:isWriterOf rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Kill_Bill"/>
+        <movies:age rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">43</movies:age>
+        <movies:gender rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</movies:gender>
+        <movies:name>Uma Thurman</movies:name>
+        <movies:nationality>American</movies:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#shaun_of_the_dead -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#shaun_of_the_dead">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Edgar_Wright"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Edgar_Wright"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Comedy"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Horror"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Edgar_Wright"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>Shaun of the dead</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2004</movies:year>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anass/ontologies/movies#the_dark_knight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anass/ontologies/movies#the_dark_knight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#movie"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Aaron_Eckhart"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Christian_Bale"/>
+        <movies:hasActor rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Heath_Ledger"/>
+        <movies:hasDirector rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Christopher_nolan"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Action"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Crime"/>
+        <movies:hasGenre rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Drama"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Christopher_nolan"/>
+        <movies:hasWriter rdf:resource="http://www.semanticweb.org/anass/ontologies/movies#Jonathan_Nolan"/>
+        <movies:country>USA</movies:country>
+        <movies:language>English</movies:language>
+        <movies:title>The Dark Knight</movies:title>
+        <movies:year rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2008</movies:year>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
